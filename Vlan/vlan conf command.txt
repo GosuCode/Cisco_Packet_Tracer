@@ -1,0 +1,24 @@
+Switch>EN
+Switch#CONFIG
+Configuring from terminal, memory, or network [terminal]? 
+Enter configuration commands, one per line.  End with CNTL/Z	
+Switch(config)#VLAN 2
+Switch(config-vlan)#NAME OFFICE
+Switch(config-vlan)#EXIT
+
+Switch(config)#VLAN 3
+Switch(config-vlan)#NAME HOME
+Switch(config-vlan)#EXIT
+Switch(config)#INTERFACE FASTETHERNET 0/1
+Switch(config-if)#SWITCHPORT ACCess vlan 2
+Switch(config-if)#exit
+Switch(config)#INTERFACE FASTETHERNET 0/2
+Switch(config-if)#SWITCHPORT ACCess vlan 2
+Switch(config-if)#exit
+Switch(config)#INTERFACE FASTETHERNET 0/3
+Switch(config-if)#SWITCHPORT ACCess vlan 3
+Switch(config-if)#exit
+Switch(config)#INTERFACE FASTETHERNET 0/4
+Switch(config-if)#SWITCHPORT ACCess vlan 3
+Switch(config-if)#exit
+Switch(config)#

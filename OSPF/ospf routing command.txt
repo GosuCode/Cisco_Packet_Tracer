@@ -1,0 +1,35 @@
+router> en
+router# config
+enter
+
+
+router 0
+Router(config-if)#exit
+Router(config)#router ospf 1
+Router(config-router)#network 192.168.1.0 0.0.0.255 area 0
+Router(config-router)#network 10.0.0.0 0.255.255.255 area 0
+Router(config-router)#network 12.0.0.0 0.255.255.255 area 0
+Router(config-router)#exit
+Router(config)#
+Router(config)#end
+
+
+router1
+Router(config-if)#
+Router(config-if)#exit
+Router(config)#router ospf 1
+Router(config-router)#network  10.0.0.0 0.255.255.255 area 0
+Router(config-router)#network  11.0.0.0 0.255.255.255 area 0
+Router(config-router)#exit
+Router(config)#
+Router(config)#end
+
+router2
+Router(config-if)#exit
+Router(config)#router ospf 1
+Router(config-router)#network 192.168.2.0 0.0.0.255 area 0
+Router(config-router)#network 11.0.0.0 0.255.255.255 area 0
+Router(config-router)#network 12.0.0.0 0.255.255.255 area 0
+Router(config-router)#exit
+Router(config)#
+Router(config)#end
